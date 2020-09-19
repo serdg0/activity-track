@@ -1,9 +1,9 @@
 <%= form_with model: @entry do |f| %>
-  <%= label_tag(:hours, "Hours") %>
-  <%= f.number_field :hours %>
+  <%= label_tag(:from_time, "From") %>
+  <%= f.time_field :from_time %>
 
-  <%= label_tag(:minutes, "Minutes") %>
-  <%= f.number_field :minutes %>
+  <%= label_tag(:to_time, "To") %>
+  <%= f.time_field :to_time %>
 
   <%= label_tag(:date, "Date") %>
   <%= f.date_field :date %>

@@ -1,16 +1,22 @@
 <h1>Your Activities</h1>
-
+<% @activities && @activities.each do |activity|%>
+<h2><%= activity.label%></h2>
+<%=link_to "New Entry", new_entry_path(activity) %>
 <table>
 <tr>
-<th>Activity</th>
-<th>User</th>
-<th></th>
+<th>Date</th>
+<th>From</th>
+<th>To</th>
+<th>Minutes</th>
 </tr>
-<% @activities && @activities.each do |activity| %>
+<% activity.entries && activity.entries.each do |entry| %>
  <tr>
- <td><%=activity.label%></td>
- <td><%=activity.user.name%></td>
- <td><%=link_to "Delete", activity, :method => :delete %></td>
+ <td><%=entry.date%></td>
+ <td><%=entry.from_time%></td>
+ <td><%=entry.to_time%></td>
+ <td><%=link_to "Delete", entry, :method => :delete %></td>
  </tr>
 <%end%>
+
 </table>
+<%end%>

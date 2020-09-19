@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = Activity.all
+    @activities = current_user.activities
   end
 
   def new

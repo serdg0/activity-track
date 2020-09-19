@@ -7,7 +7,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.create(activity_params)
     @entry.user = current_user
-
+    p params
     if @entry.save
       p 'Entry Saved Successfully!'
       redirect_to root_path
@@ -17,16 +17,18 @@ class EntriesController < ApplicationController
   end
 
   def index
-    if user_signed_in?
-      @entries = current_user.entries
-    else
-      @entries = Entry.all
-    end
+    @entries = current_user.entries
+  end
+
+  def destroy
+    @activity = Entry.find(params[:id])
+    @activity.destroy
+    redirect_to root_path
   end
 
   private
 
   def activity_params
-    params.require(:entry).permit(:hours, :minutes, :date, :activity_id)
+    params.require(:entry).permit(:from_time, :to_time, :date, :activity_id)
   end
 end

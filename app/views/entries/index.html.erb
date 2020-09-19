@@ -5,12 +5,16 @@
 <th>Activity</th>
 <th>Hours</th>
 <th>Minutes</th>
+<th>Date</th>
+<th></th>
 </tr>
-<% @entries.each do |entry| %>
+<% @entries && @entries.each do |entry| %>
  <tr>
- <td>entry.activity</td>
-  <td>entry.hours</td>
-   <td>entry.minutes</td>
+ <td><%=entry.activity.label%></td>
+  <td><%=entry.hours%></td>
+   <td><%=entry.minutes%></td>
+   <td><%=entry.date%></td>
+   <td><%= link_to 'Delete', entry, :method => :delete %></td>
  </tr>
 <%end%>
 </table>
