@@ -1,2 +1,4 @@
-<h1>Activities#new</h1>
-<p>Find me in app/views/activities/new.html.erb</p>
+<%= form_with model: @activity do |f| %>
+  <%= f.text_field :label %>
+  <%= f.submit "Create" %>
+<% end %>
