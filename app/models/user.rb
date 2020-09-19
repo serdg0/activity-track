@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :activities
   has_many :entries, through: :activities
+
+  validates :name, presence: true, length: { minimum: 2, maximum: 20 }
 end
