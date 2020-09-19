@@ -1,4 +1,8 @@
 class ActivitiesController < ApplicationController
+  def index
+    @activities = Activity.all
+  end
+
   def new
     @activity = Activity.new
   end
@@ -11,6 +15,16 @@ class ActivitiesController < ApplicationController
     else
       p @activity.errors.messages
     end
+  end
+
+  def show
+    @activity = Activity.find(params[:id])
+  end
+
+  def destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+    redirect_to root_path
   end
 
   private

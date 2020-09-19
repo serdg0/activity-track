@@ -3,4 +3,5 @@
 <%= link_to "Sign Up", new_user_registration_path if !user_signed_in?%>
 <%= link_to "Log out", destroy_user_session_path, :method => :delete if user_signed_in?%>
 <%= link_to "New Activity", new_activity_path if user_signed_in?%>
+<%= link_to "New Entry", new_entry_path if user_signed_in? && current_user.activities.length > 0%>
 </nav>

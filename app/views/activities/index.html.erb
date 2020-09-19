@@ -1,0 +1,16 @@
+<h1>Your Activities</h1>
+
+<table>
+<tr>
+<th>Activity</th>
+<th>User</th>
+<th></th>
+</tr>
+<% @activities && @activities.each do |activity| %>
+ <tr>
+ <td><%=activity.label%></td>
+ <td><%=activity.user.name%></td>
+ <td><%=link_to "Delete", activity, :method => :delete %></td>
+ </tr>
+<%end%>
+</table>

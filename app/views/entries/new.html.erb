@@ -1,2 +1,17 @@
-<h1>Entries#new</h1>
-<p>Find me in app/views/entries/new.html.erb</p>
+<%= form_with model: @entry do |f| %>
+  <%= label_tag(:hours, "Hours") %>
+  <%= f.number_field :hours %>
+
+  <%= label_tag(:minutes, "Minutes") %>
+  <%= f.number_field :minutes %>
+
+  <%= label_tag(:date, "Date") %>
+  <%= f.date_field :date %>
+  
+  <%@activities.each do |activity|%>
+    <%= f.radio_button(:activity_id, activity.id) %>
+    <%= label_tag(:activity, activity.label) %>
+  <%end%>
+
+  <%= f.submit "Create" %>
+<% end %>

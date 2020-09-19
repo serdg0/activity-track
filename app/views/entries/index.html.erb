@@ -1,2 +1,16 @@
-<h1>Entries#index</h1>
-<p>Find me in app/views/entries/index.html.erb</p>
+<h1>Your Entries</h1>
+
+<table>
+<tr>
+<th>Activity</th>
+<th>Hours</th>
+<th>Minutes</th>
+</tr>
+<% @entries.each do |entry| %>
+ <tr>
+ <td>entry.activity</td>
+  <td>entry.hours</td>
+   <td>entry.minutes</td>
+ </tr>
+<%end%>
+</table>

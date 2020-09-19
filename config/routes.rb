@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   resources :activities
-  get 'entries/new'
-  get 'entries/create'
-  get 'entries/index'
+  resources :entries
+
   devise_for :users
-  root to: 'entries#index'
+  root to: 'activities#index'
 end
