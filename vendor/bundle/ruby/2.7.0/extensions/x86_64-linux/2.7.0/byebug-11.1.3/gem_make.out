@@ -1,0 +1,19 @@
+current directory: /home/sergiodiaz/projects/activity-track/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+/home/sergiodiaz/.rbenv/versions/2.7.1/bin/ruby -I /home/sergiodiaz/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200919-7836-1v9b1j2.rb extconf.rb
+creating Makefile
+
+current directory: /home/sergiodiaz/projects/activity-track/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /home/sergiodiaz/projects/activity-track/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/sergiodiaz/projects/activity-track/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20200919-7836-jbdpc5/byebug
