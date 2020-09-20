@@ -1,17 +1,12 @@
-<%= form_with model: @entry do |f| %>
+<%= form_with model: [:activity, @entry] do |f| %>
   <%= label_tag(:from_time, "From") %>
   <%= f.time_field :from_time %>
-
+  <% p params %>
   <%= label_tag(:to_time, "To") %>
   <%= f.time_field :to_time %>
 
   <%= label_tag(:date, "Date") %>
   <%= f.date_field :date %>
-  
-  <%@activities.each do |activity|%>
-    <%= f.radio_button(:activity_id, activity.id) %>
-    <%= label_tag(:activity, activity.label) %>
-  <%end%>
 
   <%= f.submit "Create" %>
 <% end %>

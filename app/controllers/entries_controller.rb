@@ -1,13 +1,12 @@
 class EntriesController < ApplicationController
   def new
     @entry = Entry.new
-    @activities = current_user.activities
   end
 
   def create
-    @entry = Entry.create(activity_params)
+    @entry = Entry.create(entry_params)
     @entry.user = current_user
-    p params
+    @entry.activity_id = params[:activity_id]
     if @entry.save
       p 'Entry Saved Successfully!'
       redirect_to root_path
@@ -28,7 +27,7 @@ class EntriesController < ApplicationController
 
   private
 
-  def activity_params
-    params.require(:entry).permit(:from_time, :to_time, :date, :activity_id)
+  def entry_params
+    params.require(:entry).permit(:from_time, :to_time, :date)
   end
 end
