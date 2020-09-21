@@ -2,7 +2,7 @@ class Activity < ApplicationRecord
   belongs_to :user
   has_many :entries, dependent: :destroy
 
-  validates :label, uniqueness: true, presence: true
+  validates :label, presence: true
 
   def total_minutes
     ((total_time % 3600) / 60).to_i
