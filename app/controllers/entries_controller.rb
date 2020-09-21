@@ -6,17 +6,13 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.create(entry_params)
     @entry.user = current_user
-    @entry.activity_id = params[:activity_id]
+    @entry.activity_id = params[:activity_id].to_i
     if @entry.save
-      p 'Entry Saved Successfully!'
-      redirect_to root_path
+      flash[:notice] = 'Entry Saved Successfully!'
     else
-      p @entry.errors.messages
+      flash[:alert] = @entry.errors.full_messages.first
     end
-  end
-
-  def index
-    @entries = current_user.entries
+    redirect_to root_path
   end
 
   def destroy

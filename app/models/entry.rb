@@ -5,7 +5,7 @@ class Entry < ApplicationRecord
   validates :from_time, presence: true
   validates :to_time, presence: true
   validates :date, presence: true
-  validate :valid_date?
+  validate :valid_date?, if: :date
 
   def minutes
     ((total_time_in_secs % 3600) / 60).to_i
@@ -22,6 +22,6 @@ class Entry < ApplicationRecord
   private
   
   def valid_date?
-    errors.add("Date", "is invalid.") unless date <= Time.now
+    errors.add("Date", "can't be from the future!") unless date <= Time.now
   end
 end
