@@ -4,19 +4,22 @@
 <h4><%= activity.time_display %></h4>
 <%=link_to "New Entry", new_activity_entry_path(activity.id)  %>
 <%=link_to "Delete Activity", activity, :method => :delete %>
-<table>
+<table class="table">
+<thead>
 <tr>
-<th>Date</th>
-<th>Time</th>
-<th></th>
-</tr>
+<th scope="col">Date</th>
+<th scope="col">Time</th>
+<th scope="col"></th>
+</th>
+</thead>
+<tbody>
 <% activity.entries && activity.entries.each do |entry| %>
  <tr>
- <td><%=entry.date%></td>
+ <th scope="row"><%=entry.date%></th>
  <td><%="#{entry.hours}H #{entry.minutes}M"%></td>
  <td><%=link_to "Delete", entry, :method => :delete %></td>
  </tr>
 <%end%>
-
+</tbody>
 </table>
 <%end%>

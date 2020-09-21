@@ -10,15 +10,11 @@ class ActivitiesController < ApplicationController
   def create
     @activity = current_user.activities.build(activity_params)
     if @activity.save
-      p "Activity saved successfully!"
-      redirect_to root_path
+      flash[:notice] = "#{@activity.label} saved successfully!"
     else
-      p @activity.errors.messages
+      flash[:alert] = @activity.errors.full_messages.first
     end
-  end
-
-  def show
-    @activity = Activity.find(params[:id])
+    redirect_to root_path
   end
 
   def destroy

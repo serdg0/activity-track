@@ -1,5 +1,4 @@
 <%= form_with model: [:activity, @entry] do |f| %>
-  <%= render "shared/errors" if @entry.errors.any? %>
   <%= label_tag(:from_time, "From") %>
   <%= f.time_field :from_time %>
   <% p params %>

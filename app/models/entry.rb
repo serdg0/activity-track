@@ -16,7 +16,7 @@ class Entry < ApplicationRecord
   end
 
   def total_time_in_secs
-    to_time - from_time
+    (to_time - from_time).abs
   end
 
   private
