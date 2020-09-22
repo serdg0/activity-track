@@ -1,24 +1,15 @@
-# README
+# Activity Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple time tracker for your activities. Sign up, create an activity, and start tracking.
 
-Things you may want to cover:
+### [Live Demo](https://safe-castle-00362.herokuapp.com/)
 
-* Ruby version
+### Tools
 
-* System dependencies
+* Ruby 2.7.1
 
-* Configuration
+* Rails 6.0.3.2
 
-* Database creation
+### Gems
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Devise
