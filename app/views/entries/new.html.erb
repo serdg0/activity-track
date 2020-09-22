@@ -1,12 +1,21 @@
-<%= form_with model: [:activity, @entry] do |f| %>
-  <%= label_tag(:from_time, "From") %>
-  <%= f.time_field :from_time %>
-  <% p params %>
-  <%= label_tag(:to_time, "To") %>
-  <%= f.time_field :to_time %>
+<div class="container d-flex flex-column align-items-center">
+  <h2>New Entry</h2>
+  <%= form_with model: [:activity, @entry], class: "d-flex flex-column" do |f|
+  %>
+  <div class="form-group">
+    <%= label_tag(:from_time, "From") %> <%= f.time_field :from_time, {:class =>
+    "form-control"} %>
+  </div>
 
-  <%= label_tag(:date, "Date") %>
-  <%= f.date_field :date %>
+  <div class="form-group">
+    <%= label_tag(:to_time, "To") %> <%= f.time_field :to_time, {:class =>
+    "form-control"} %>
+  </div>
 
-  <%= f.submit "Create" %>
-<% end %>
+  <div class="form-group">
+    <%= label_tag(:date, "Start Date") %> <%= f.date_field :date, {:class =>
+    "form-control"} %>
+  </div>
+
+  <%= f.submit "Create", {:class => "btn btn-success"} %> <% end %>
+</div>
